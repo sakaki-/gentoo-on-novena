@@ -49,24 +49,50 @@ To try this out, you will need:
 
 ## Downloading and Writing the Image
 
+Choose either the libre or standard variant, then follow the appropriate instructions below.
+
+### 1) Libre Variant
+
 On your Linux box, issue:
 ```console
 # wget -c https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgenfree.img.xz
 # wget -c https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgenfree.img.xz.asc
 ```
-to fetch the compressed disk image file (~800MiB) and its signature.
-> If you want the 'standard' variant, instead use:
-```console
-# wget -c https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgen.img.xz
-# wget -c https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgen.img.xz.asc
-```
+to fetch the compressed disk image file (~769MiB) and its signature.
 
 Next, if you like, verify the image using gpg (this step is optional):
 ```console
 # gpg --keyserver pool.sks-keyservers.net --recv-key DDE76CEA
 # gpg --verify novgenfree.img.xz.asc novgenfree.img.xz
 ```
-> If you downloaded the 'standard' image, instead use:
+
+Assuming that reports 'Good signature', you can proceed. (Warnings that the key is "not certified with a trusted signature" are normal and [may be ignored](http://security.stackexchange.com/questions/6841/ways-to-sign-gpg-public-key-so-it-is-trusted).)
+
+Next, insert (into your Linux box) the microSD card on which you want to install the image, and determine its device path (this will be something like /dev/sdb, /dev/sdc etc., or perhaps something like /dev/mmcblk1; the actual path will depend on your system - you can use the lsblk tool to help you). Unmount any existing partitions of the card that may have automounted (using umount). Then issue:
+
+> **Warning** - this will *destroy* all existing data on the target drive, so please double-check that you have the path correct! As mentioned, it is wise to use a spare microSD card as your target, keeping your existing Debian microSD card in a safe place; that way, you can easily reboot back into your existing Debian system, simply by swapping back to your old card.
+
+```console
+# xzcat novgenfree.img.xz > /dev/sdX && sync
+```
+
+Substitute the actual microSD card device path, for example /dev/sdc, for /dev/sdX in the above command. Make sure to reference the device, **not** a partition within it (so e.g., /dev/sdc and not /dev/sdc1; /dev/sdd and not /dev/sdd1 etc.)
+> If, on your system, the microSD card showed up with a path of form /dev/mmcblk1 instead, then use this as the target, in place of /dev/sdX. For this naming format, the trailing digit *is* part of the drive name (partitions are labelled as /dev/mmcblk1p1, /dev/mmcblk1p2 etc.). So, for example, you might need to use `xzcat novgenfree.img.xz > /dev/mmcblk1 && sync`.
+
+The above xzcat to the microSD card will take some time, due to the decompression (it takes between 5 and 15 minutes on my machine, depending on the microSD card used). It should exit cleanly when done - if you get a message saying 'No space left on device', then your card key is too small for the image, and you should try again with a larger capacity one.
+
+Now continue reading at ["Booting!"](#booting) below.
+
+### 2) Standard Variant
+
+On your Linux box, issue:
+```console
+# wget -c https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgen.img.xz
+# wget -c https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgen.img.xz.asc
+```
+to fetch the compressed disk image file (~796MiB) and its signature.
+
+Next, if you like, verify the image using gpg (this step is optional):
 ```console
 # gpg --keyserver pool.sks-keyservers.net --recv-key DDE76CEA
 # gpg --verify novgen.img.xz.asc novgen.img.xz
@@ -79,19 +105,17 @@ Next, insert (into your Linux box) the microSD card on which you want to install
 > **Warning** - this will *destroy* all existing data on the target drive, so please double-check that you have the path correct! As mentioned, it is wise to use a spare microSD card as your target, keeping your existing Debian microSD card in a safe place; that way, you can easily reboot back into your existing Debian system, simply by swapping back to your old card.
 
 ```console
-# xzcat novgenfree.img.xz > /dev/sdX && sync
-```
-> If you downloaded the 'standard' image, instead use:
-```console
 # xzcat novgen.img.xz > /dev/sdX && sync
 ```
 
 Substitute the actual microSD card device path, for example /dev/sdc, for /dev/sdX in the above command. Make sure to reference the device, **not** a partition within it (so e.g., /dev/sdc and not /dev/sdc1; /dev/sdd and not /dev/sdd1 etc.)
-> If, on your system, the microSD card showed up with a path of form /dev/mmcblk1 instead, then use this as the target, in place of /dev/sdX. For this naming format, the trailing digit *is* part of the drive name (partitions are labelled as /dev/mmcblk1p1, /dev/mmcblk1p2 etc.). So, for example, you might need to use `xzcat novgenfree.img.xz > /dev/mmcblk1 && sync`.
+> If, on your system, the microSD card showed up with a path of form /dev/mmcblk1 instead, then use this as the target, in place of /dev/sdX. For this naming format, the trailing digit *is* part of the drive name (partitions are labelled as /dev/mmcblk1p1, /dev/mmcblk1p2 etc.). So, for example, you might need to use `xzcat novgen.img.xz > /dev/mmcblk1 && sync`.
 
 The above xzcat to the microSD card will take some time, due to the decompression (it takes between 5 and 15 minutes on my machine, depending on the microSD card used). It should exit cleanly when done - if you get a message saying 'No space left on device', then your card key is too small for the image, and you should try again with a larger capacity one.
 
-## Booting!
+Now continue reading at ["Booting!"](#booting), immediately below.
+
+## <a name="booting"></a>Booting!
 
 With your Novena still running its normal Debian system, run the novena-eeprom-gui tool, and make sure that the "Root filesystem location" radio button is set to "Internal MMC". If it is, you need do nothing, but, if it is currently set to "SATA disk" instead, then click on "Internal MMC" now, and then select the menu item File -> Save to EEPROM.
 
