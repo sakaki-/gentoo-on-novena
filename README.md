@@ -74,7 +74,7 @@ Next, if you like, verify the image using gpg (this step is optional):
 
 Assuming that reports 'Good signature', you can proceed. (Warnings that the key is "not certified with a trusted signature" are normal and [may be ignored](http://security.stackexchange.com/questions/6841/ways-to-sign-gpg-public-key-so-it-is-trusted).)
 
-Next, insert (into your Linux box) the USB key on which you want to install the image, and determine its device path (this will be something like /dev/sdb, /dev/sdc etc., or perhaps something like /dev/mmcblk1; the actual path will depend on your system - you can use the lsblk tool to help you). Unmount any existing partitions of the USB key that may have automounted (using umount). Then issue:
+Next, insert (into your Linux box) the microSD card on which you want to install the image, and determine its device path (this will be something like /dev/sdb, /dev/sdc etc., or perhaps something like /dev/mmcblk1; the actual path will depend on your system - you can use the lsblk tool to help you). Unmount any existing partitions of the card that may have automounted (using umount). Then issue:
 
 > **Warning** - this will *destroy* all existing data on the target drive, so please double-check that you have the path correct! As mentioned, it is wise to use a spare microSD card as your target, keeping your existing Debian microSD card in a safe place; that way, you can easily reboot back into your existing Debian system, simply by swapping back to your old card.
 
