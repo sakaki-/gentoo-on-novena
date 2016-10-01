@@ -229,7 +229,7 @@ It is also possible to cross-compile a kernel on your (Gentoo) PC, which is *muc
 ### Keeping Your Gentoo System Up-To-Date
 
 You can update your system at any time. As there are quite a few steps involved to do this correctly on Gentoo, I have provided a convenience script, **genup** to do this as part of the image. So, to update your system, simply issue:
-```
+```console
 novena ~ # genup
    (this will take some time to complete)
 ```
@@ -238,7 +238,7 @@ This is loosely equivalent to `apt-get update && apt-get upgrade` on Debian. See
 Note that because Gentoo is a source-based distribution, and the novena is not a *particularly* fast machine, updating may take a number of hours, if many packages have changed. However, genup will automatically take advantage of distributed cross-compiling, using distcc, if you have that set up.
 
 When the update has completed, if prompted to do so by genup, then issue:
-```
+```console
 novena ~ # dispatch-conf
 ```
 to deal with any config file clashes that may have been introduced by the upgrade process.
