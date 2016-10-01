@@ -49,9 +49,9 @@ To try this out, you will need:
 
 ## Downloading and Writing the Image
 
-Choose either the libre or standard variant, then follow the appropriate instructions below.
+Choose either the libre or standard variant, then follow the appropriate instructions below ([libre](#libre) or [standard](#standard)).
 
-### 1) Libre Variant
+### <a name="libre"></a>1) Libre Variant
 
 On your Linux box, issue:
 ```console
@@ -83,7 +83,7 @@ The above xzcat to the microSD card will take some time, due to the decompressio
 
 Now continue reading at ["Booting!"](#booting) below.
 
-### 2) Standard Variant
+### <a name="standard"></a>2) Standard Variant
 
 On your Linux box, issue:
 ```console
