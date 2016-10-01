@@ -25,7 +25,7 @@ The images may be downloaded from the links below (or via wget, per the instruct
 Variant | Version | Image | Digital Signature
 :--- | ---: | ---: | ---:
 Libre | v1.0.0 | [novgenfree.img.xz](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgenfree.img.xz) | [novgenfree.img.xz.asc](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgenfree.img.xz.asc)
-Standard | v1.0.0 | [novgen.img.xz](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgen.img.xz.asc) | [novgen.img.xz.asc](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgen.img.xz.asc)
+Standard | v1.0.0 | [novgen.img.xz](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgen.img.xz) | [novgen.img.xz.asc](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgen.img.xz.asc)
 
 Please read the instructions below before proceeding. Also please note that all images are provided 'as is' and without warranty. 
 
