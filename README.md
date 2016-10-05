@@ -233,6 +233,7 @@ novena linux # make menuconfig
 Now build and install the kernel, device tree blob and modules:
 ```console
 novena linux # make -j4 zImage modules dtbs
+novena linux # make modules_install
 ```
 Next, assuming your /boot is mounted, do:
 ```console
