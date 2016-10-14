@@ -24,8 +24,8 @@ The images may be downloaded from the links below (or via wget, per the instruct
 
 Variant | Version | Image | Digital Signature
 :--- | ---: | ---: | ---:
-Libre | v1.0.0 | [novgenfree.img.xz](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgenfree.img.xz) | [novgenfree.img.xz.asc](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgenfree.img.xz.asc)
-Standard | v1.0.0 | [novgen.img.xz](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgen.img.xz) | [novgen.img.xz.asc](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgen.img.xz.asc)
+Libre | v1.0.1 | [novgenfree.img.xz](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.1/novgenfree.img.xz) | [novgenfree.img.xz.asc](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.1/novgenfree.img.xz.asc)
+Standard | v1.0.1 | [novgen.img.xz](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.1/novgen.img.xz) | [novgen.img.xz.asc](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.1/novgen.img.xz.asc)
 
 The older images are still available, together with a short changelog, [here](https://github.com/sakaki-/gentoo-on-novena/releases).
 
@@ -57,10 +57,10 @@ Choose either the libre or standard variant, then follow the appropriate instruc
 
 On your Linux box, issue:
 ```console
-# wget -c https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgenfree.img.xz
-# wget -c https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgenfree.img.xz.asc
+# wget -c https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.1/novgenfree.img.xz
+# wget -c https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.1/novgenfree.img.xz.asc
 ```
-to fetch the compressed disk image file (~769MiB) and its signature.
+to fetch the compressed disk image file (~770MiB) and its signature.
 
 Next, if you like, verify the image using gpg (this step is optional):
 ```console
@@ -89,10 +89,10 @@ Now continue reading at ["Booting!"](#booting) below.
 
 On your Linux box, issue:
 ```console
-# wget -c https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgen.img.xz
-# wget -c https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgen.img.xz.asc
+# wget -c https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.1/novgen.img.xz
+# wget -c https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.1/novgen.img.xz.asc
 ```
-to fetch the compressed disk image file (~796MiB) and its signature.
+to fetch the compressed disk image file (~797MiB) and its signature.
 
 Next, if you like, verify the image using gpg (this step is optional):
 ```console
