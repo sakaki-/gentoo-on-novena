@@ -27,6 +27,8 @@ Variant | Version | Image | Digital Signature
 Libre | v1.0.0 | [novgenfree.img.xz](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgenfree.img.xz) | [novgenfree.img.xz.asc](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgenfree.img.xz.asc)
 Standard | v1.0.0 | [novgen.img.xz](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgen.img.xz) | [novgen.img.xz.asc](https://github.com/sakaki-/gentoo-on-novena/releases/download/v1.0.0/novgen.img.xz.asc)
 
+The older images are still available, together with a short changelog, [here](https://github.com/sakaki-/gentoo-on-novena/releases).
+
 Please read the instructions below before proceeding. Also please note that all images are provided 'as is' and without warranty. 
 
 > **NB:** running either of these images will not affect any existing Debian system you may have installed to your Novena's hard drive (if fitted) (unless you explicitly perform mount, fdisk or similar operations, of course).
@@ -211,6 +213,8 @@ Have fun! ^-^
 If you'd like to compile a kernel on your new system, you can do so easily. 
 Suppose you wish to build the most modern version available using the libre Gentoo-patched sources. Then, running as root, you would issue:
 ```console
+novena ~ # eix-sync -w
+   (to ensure package metadata up-to-date)
 novena ~ # emerge --ask --verbose sys-kernel/novena_hardened-sources
    (confirm when prompted; this will take some time to complete, depending on your network connection)
 novena ~ # eselect kernel list
