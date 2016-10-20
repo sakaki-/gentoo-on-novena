@@ -206,11 +206,13 @@ Have fun! ^-^
 * If using the libre image, note that although the Grsecurity patchset is in place, almost none of its options are turned on. You can of course change this yourself with `make menuconfig` (see below section on kernel compilation).
 * I haven't properly tested suspend to RAM yet. Hibernation (suspend-to-disk) will not work given the small size of the swap on the images.
 * There is currently no (publicly released) installer to write the Gentoo system to the Novena's HDD (should you have one installed, and wish to do so). However, I plan to release one as part of the "novena" overlay in the near term.
-* Finally, if you have a microSD card larger than the minimum 8GB, after writing the image you can easily extend the size of the third partition (using fdisk and resize2fs), so you have more space to work in. See [these instructions](http://geekpeek.net/resize-filesystem-fdisk-resize2fs/), for example.
+* <a name="morespace"></a>Finally, if you have a microSD card larger than the minimum 8GB, after writing the image you can easily extend the size of the third partition (using fdisk and resize2fs), so you have more space to work in. See [these instructions](http://geekpeek.net/resize-filesystem-fdisk-resize2fs/), for example.
 
 ### Recompiling the Kernel (Optional)
 
-If you'd like to compile a kernel on your new system, you can do so easily. 
+If you'd like to compile a kernel on your new system, you can do so easily.
+> **NB:** if you are running Gentoo on a microSD card, please be  sure to expand your root partition (as described [above](#morespace)) before attempting to build a kernel: it requires more free space than is present on the shipped image.
+
 Suppose you wish to build the most modern version available using the libre Gentoo-patched sources. Then, running as root, you would issue:
 ```console
 novena ~ # eix-sync -w
@@ -257,7 +259,10 @@ It is also possible to cross-compile a kernel on your (Gentoo) PC, which is *muc
 
 ### Keeping Your Gentoo System Up-To-Date
 
-You can update your system at any time. As there are quite a few steps involved to do this correctly on Gentoo, I have provided a convenience script, **genup** to do this as part of the image. So, to update your system, simply issue:
+You can update your system at any time. As there are quite a few steps involved to do this correctly on Gentoo, I have provided a convenience script, **genup** to do this as part of the image.
+> **NB:** if you are running Gentoo on a microSD card, please be  sure to expand your root partition (as described [above](#morespace)) before attempting this: the update of certain packages (such as www-client/firefox) requires more free space than is present on the shipped image.
+
+So, to update your system, simply issue:
 ```console
 novena ~ # genup
    (this will take some time to complete)
