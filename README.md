@@ -4,6 +4,7 @@ Bootable Gentoo images for the Novena SBC (Linux 4.7.2, Xfce, regular &amp; full
 ## Description
 
 <img src="https://raw.githubusercontent.com/sakaki-/resources/master/kousagi/novena/Kousagi_Novena.jpg" alt="Kousagi Novena" width="250px" align="right"/>
+
 This project contains two bootable, microSD card Gentoo images for the FOSS-friendly [Novena single-board computer](https://www.kosagi.com/w/index.php?title=Novena_Main_Page) from [Sutajio Ko-usagi](https://www.kosagi.com/w/index.php?title=Main_Page).
 
 Both images contain a complete (OpenRC-based) Gentoo system (including a full Portage tree) - so you can run emerge operations immediately - and both have a reasonably populated userland (Xfce v4.12, Firefox v49.0, Claws Mail v3.14.0, Thunderbird v45.3.0, VLC v2.2.4, abiword v3.0.1 etc.) so that you can get productive *without* having to compile anything first (unless you wish to do so, of course ^-^).
